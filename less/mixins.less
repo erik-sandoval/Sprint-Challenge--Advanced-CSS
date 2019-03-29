@@ -1,1 +1,35 @@
 // Mixins Here
+
+.display-column() {
+    display       : flex;
+    flex-direction: column;
+}
+
+.display-column-rev() {
+    display       : flex;
+    flex-direction: column-reverse;
+}
+
+.btn-style(@color: red, @background: cyan) {
+
+    color        : @color;
+    background   : @background;
+    text-align   : center;
+    font-size    : 1.8rem;
+    font-weight  : 600;
+    width        : 30%;
+    padding      : 10px 0px;
+    border-radius: 5px;
+
+    &:hover {
+        color     : @background;
+        background: @color;
+        cursor    : pointer;
+        border    : 1px solid @background;
+    }
+
+    @media @phone {
+        width  : 100%;
+        padding: 25px;
+    }
+}
